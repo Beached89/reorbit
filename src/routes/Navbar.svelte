@@ -42,7 +42,7 @@
             <a href="/MyCzone">My CZone</a>
         </li>
         <li>
-            <a href="/Message Center">Message Center</a>
+            <a href="/MessageCenter">Message Center</a>
         </li>
     </ul>
 </nav>
