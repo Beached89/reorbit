@@ -39,7 +39,7 @@
             <a href="/">Orbit Home</a>
         </li>        
         <li>
-            <a href="/MyCzone">My CZone</a>
+            <a href="/Myzone">My CZone</a>
         </li>
         <li>
             <a href="/MessageCenter">Message Center</a>

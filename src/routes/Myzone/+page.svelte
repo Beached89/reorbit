@@ -1,6 +1,11 @@
 <script>
 	import { draggable } from '@neodrag/svelte';
+	/** @type {import('./$types').PageData} */
+	export let data;
 </script>
+<pre> {data}</pre>
+
+
 <style>
 	.czone {
 		width: 796px;

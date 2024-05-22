@@ -20,6 +20,8 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@neodrag/svelte": "^2.0.3"
+		"@neodrag/svelte": "^2.0.3",
+		"better-sqlite3": "^9.4.3",
+		"sqlite3": "^5.1.7"
 	}
 }
