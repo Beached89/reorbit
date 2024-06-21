@@ -18,10 +18,11 @@
 		background-image: url("https://i.imgur.com/7szYvU4.jpg");
 		background-repeat: no-repeat;
 		background-size: cover;
+		position: relative;
 	}
 </style>
 
-<div class="czone" >
-	<div use:draggable={{bounds: 'parent'}} ><img src="https://i.imgur.com/3KuPgq2.png" width="100" alt="svelte logo" draggable="false"></div>
-	<div use:draggable={{bounds: 'parent'}} ><img src="https://i.imgur.com/4GwbL3u.png" width="100" alt="svelte logo" draggable="false"></div>
+<div class="czone">
+	<div use:draggable={{bounds: 'parent'}} style="position: absolute; left: 400px; top: 120px;"><img src="https://i.imgur.com/3KuPgq2.png" width="100" alt="svelte logo" draggable="false"></div>
+	<div use:draggable={{bounds: 'parent'}} style="position: absolute; left: 100px; top: 200px;"><img src="https://i.imgur.com/4GwbL3u.png" width="100" alt="svelte logo" draggable="false"></div>
 </div>
