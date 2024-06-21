@@ -5,14 +5,15 @@
     console.log(data.message)
     import { draggable } from '@neodrag/svelte';
 
-    function onmouseup() {
-        console.log("Mouse UP");
+    function onmouseup(e) {
+        var rect = e.target.getBoundingClientRect();
+        var left = rect.left;
+        var top = rect.top;
+        console.log('left:' + left + "; top:" + top + "; UID:" + e.target.id +";");
     }
 </script>
 
-<div class="messagecenter">
-
-</div>
+<!-- <div class="messagecenter"></div> -->
 
 <style>
 	.czone {
@@ -30,13 +31,10 @@
 	}
 </style>
 
-
 <div class="czone">
     {#if ctoon.length > 0}
         {#each ctoon as toon}
-            <div use:draggable={{bounds: 'parent'}} style="position: absolute; left: {toon.X_Cord}px; top: {toon.Y_Cord}px;" id={toon.uid}><img src={toon.img_url} width="100" alt="svelte logo" draggable="false"></div>
+            <div on:mouseup={onmouseup} use:draggable={{bounds: 'parent'}} style="position: absolute; left: {toon.X_Cord}px; top: {toon.Y_Cord}px;"><img src={toon.img_url} width="100" alt="svelte logo" draggable="false" id={toon.uid}></div>
         {/each}
     {/if}
 </div>
-
-<svelte:window on:mouseup={onmouseup}></svelte:window>
