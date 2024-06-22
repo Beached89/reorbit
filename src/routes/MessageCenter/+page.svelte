@@ -6,17 +6,20 @@
     import { draggable } from '@neodrag/svelte';
 
     function onmouseup(e) {
+        console.log(e)        
+        console.log(e.x,  e.y)        
         var rect = e.target.getBoundingClientRect();
-        var left = rect.left;
-        var top = rect.top;
+        console.log(rect.x, rect.y)
+        var left = e.x;
+        var top = e.y;
         //console.log('left:' + left + "; top:" + top + "; UID:" + e.target.id +";");
         updateRecord(left,top,e.target.id)
     }
 
-    async function updateRecord(left,top,uid) {
+    async function updateRecord(x,y,uid) {
 		const response = await fetch('/api/updateRecord', {
 			method: 'POST',
-			body: JSON.stringify({ left, top, uid }),
+			body: JSON.stringify({ x, y, uid }),
 			headers: {
 				'content-type': 'application/json'
 			}
