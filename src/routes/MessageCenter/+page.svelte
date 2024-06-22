@@ -9,8 +9,21 @@
         var rect = e.target.getBoundingClientRect();
         var left = rect.left;
         var top = rect.top;
-        console.log('left:' + left + "; top:" + top + "; UID:" + e.target.id +";");
+        //console.log('left:' + left + "; top:" + top + "; UID:" + e.target.id +";");
+        updateRecord(left,top,e.target.id)
     }
+
+    async function updateRecord(left,top,uid) {
+		const response = await fetch('/api/updateRecord', {
+			method: 'POST',
+			body: JSON.stringify({ left, top, uid }),
+			headers: {
+				'content-type': 'application/json'
+			}
+		});
+
+		var r = await response.json();
+	}
 </script>
 
 <!-- <div class="messagecenter"></div> -->

@@ -23,17 +23,3 @@ export const load: Load = async () => {
 
         return {'message': rows};
 }
-
-export function _updateRecord(x: number,y: number ,uid: number): void {
-    var db = new sqlite3.Database('./Database/BillyMojojojoFinn.db' ,sqlite3.OPEN_READWRITE,(err)=>{
-        if (err) return console.error(err.message);
-    });
-
-    const sql = `
-        update Collection
-            set X_Cord, Y_Cord = $x, $y
-        where uid = $uid
-    `;
-    const stmnt = db.prepare(sql);
-    stmnt.run({x,y,uid})
-}
